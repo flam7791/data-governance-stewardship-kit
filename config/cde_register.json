@@ -1,0 +1,15 @@
+{
+  "_about": "Critical data elements (CDEs). Each has a business definition, a domain (which fixes owner and steward), a criticality that sets its quality target, a classification, and the rules that measure it. Fictional.",
+  "cdes": [
+    {"id": "CDE-01", "name": "Property country", "domain": "Listings", "dataset": "properties", "field": "country", "criticality": "critical", "classification": "internal", "definition": "ISO 3166-1 alpha-2 code of the country where the property is located; drives tax, legal and search.", "rules": ["R01"]},
+    {"id": "CDE-02", "name": "Property city", "domain": "Listings", "dataset": "properties", "field": "city", "criticality": "high", "classification": "internal", "definition": "City shown to guests in search and on the confirmation.", "rules": ["R02"]},
+    {"id": "CDE-03", "name": "Nightly price", "domain": "Listings", "dataset": "properties", "field": "nightly_price_eur", "criticality": "critical", "classification": "internal", "definition": "Base price per night in EUR before taxes and discounts.", "rules": ["R03"]},
+    {"id": "CDE-04", "name": "Listing verification date", "domain": "Listings", "dataset": "properties", "field": "last_verified_at", "criticality": "medium", "classification": "internal", "definition": "Date the listing details were last confirmed by the host; older than 180 days counts as stale.", "rules": ["R04"]},
+    {"id": "CDE-05", "name": "Booking identifier", "domain": "Bookings", "dataset": "bookings", "field": "booking_id", "criticality": "critical", "classification": "internal", "definition": "Unique key of a booking across all channels.", "rules": ["R05"]},
+    {"id": "CDE-06", "name": "Booked property", "domain": "Bookings", "dataset": "bookings", "field": "property_id", "criticality": "critical", "classification": "internal", "definition": "The property the booking is for; must exist in the listings register.", "rules": ["R06"]},
+    {"id": "CDE-07", "name": "Stay dates", "domain": "Bookings", "dataset": "bookings", "field": "checkin / checkout", "criticality": "critical", "classification": "internal", "definition": "Check-in and check-out dates; check-out must be after check-in.", "rules": ["R07"]},
+    {"id": "CDE-08", "name": "Booking currency", "domain": "Bookings", "dataset": "bookings", "field": "currency", "criticality": "high", "classification": "internal", "definition": "ISO 4217 currency of the amount charged; supported: EUR, GBP, USD, CHF.", "rules": ["R08"]},
+    {"id": "CDE-09", "name": "Guest identifier", "domain": "Guests", "dataset": "bookings", "field": "guest_id", "criticality": "critical", "classification": "restricted-personal", "definition": "Pseudonymous key of the guest; never the guest's name or email.", "rules": ["R09"]},
+    {"id": "CDE-10", "name": "Guest contact email", "domain": "Guests", "dataset": "bookings", "field": "guest_email", "criticality": "high", "classification": "restricted-personal", "definition": "Address used for booking confirmations; values are never copied into reports.", "rules": ["R10"]}
+  ]
+}

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+*.zip
+.DS_Store
+Thumbs.db
+data/
+reports/latest/
+evals/cases/_data/
+PUSH.md

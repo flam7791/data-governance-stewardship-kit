@@ -1,0 +1,15 @@
+[project]
+name = "dgkit"
+version = "0.1.0"
+description = "Data-governance stewardship kit: CDE register, data-quality rules as code, owner scorecards, issue SLAs and adoption tracking."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Flavio Mericio"}]
+dependencies = []
+
+[project.scripts]
+dgkit = "dgkit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

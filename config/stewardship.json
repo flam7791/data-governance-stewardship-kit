@@ -1,0 +1,10 @@
+{
+  "_about": "Ownership and stewardship model for the fictional Northwind Stays marketplace. Roles, not people. Accountable = data owner (business), Responsible = data steward, Consulted = platform team, Informed = data governance office.",
+  "domains": {
+    "Listings": {"data_owner": "Head of Supply Operations", "data_steward": "Listings Data Steward", "consulted": "Supply Platform Team", "informed": "Data Governance Office", "issue_sla_days": 5},
+    "Bookings": {"data_owner": "Head of Booking Operations", "data_steward": "Bookings Data Steward", "consulted": "Payments Platform Team", "informed": "Data Governance Office", "issue_sla_days": 5},
+    "Guests":   {"data_owner": "Head of Customer Service", "data_steward": "Guest Data Steward", "consulted": "Identity Platform Team", "informed": "Data Governance Office", "issue_sla_days": 5}
+  },
+  "targets_by_criticality": {"critical": 0.99, "high": 0.97, "medium": 0.95},
+  "amber_margin": 0.01
+}

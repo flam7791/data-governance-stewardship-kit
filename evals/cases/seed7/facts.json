@@ -1,0 +1,579 @@
+{
+ "meta": {
+  "tool": "dgkit",
+  "version": "0.1.0",
+  "organisation": "Northwind Stays (fictional)"
+ },
+ "weeks": [
+  "2026-W40",
+  "2026-W41",
+  "2026-W42",
+  "2026-W43",
+  "2026-W44",
+  "2026-W45"
+ ],
+ "latest_week": "2026-W45",
+ "previous_week": "2026-W44",
+ "summary": {
+  "cdes": 10,
+  "green": 5,
+  "amber": 4,
+  "red": 1,
+  "open_issues_latest_week": 1
+ },
+ "owners": [
+  {
+   "domain": "Listings",
+   "data_owner": "Head of Supply Operations",
+   "data_steward": "Listings Data Steward",
+   "score": 0.984,
+   "previous_score": 0.983,
+   "change_pp": 0.1,
+   "green": 4,
+   "amber": 0,
+   "red": 0,
+   "trend": [
+    0.955,
+    0.9665,
+    0.9645,
+    0.9665,
+    0.983,
+    0.984
+   ],
+   "adoption": {
+    "stage": "Managed",
+    "register_complete": true,
+    "rule_coverage": 1.0,
+    "issues_last_4_weeks": 2,
+    "sla_ack_rate": 1.0,
+    "issue_sla_days": 5
+   },
+   "red_cdes": [],
+   "nudge": false,
+   "nudge_reasons": []
+  },
+  {
+   "domain": "Bookings",
+   "data_owner": "Head of Booking Operations",
+   "data_steward": "Bookings Data Steward",
+   "score": 0.9836,
+   "previous_score": 0.9841,
+   "change_pp": -0.05,
+   "green": 1,
+   "amber": 2,
+   "red": 1,
+   "trend": [
+    0.9969,
+    0.9975,
+    0.9945,
+    0.9971,
+    0.9841,
+    0.9836
+   ],
+   "adoption": {
+    "stage": "Measured",
+    "register_complete": true,
+    "rule_coverage": 1.0,
+    "issues_last_4_weeks": 2,
+    "sla_ack_rate": 0.0,
+    "issue_sla_days": 5
+   },
+   "red_cdes": [
+    {
+     "cde": "CDE-07",
+     "name": "Stay dates",
+     "domain": "Bookings",
+     "criticality": "critical",
+     "definition": "Check-in and check-out dates; check-out must be after check-in.",
+     "classification": "internal",
+     "rules": [
+      "R07"
+     ],
+     "dimension": "consistency",
+     "pass_rate": 0.9725,
+     "target": 0.99,
+     "status": "red",
+     "failed_records": 42,
+     "records": 1529,
+     "sample_failed_ids": [
+      "B0007508",
+      "B0007540",
+      "B0007542",
+      "B0007558",
+      "B0007560"
+     ]
+    }
+   ],
+   "nudge": true,
+   "nudge_reasons": [
+    "1 critical data element(s) red in 2026-W45",
+    "0% of issues in the last 4 weeks acknowledged within the 5-day SLA"
+   ]
+  },
+  {
+   "domain": "Guests",
+   "data_owner": "Head of Customer Service",
+   "data_steward": "Guest Data Steward",
+   "score": 0.9781,
+   "previous_score": 0.9748,
+   "change_pp": 0.33,
+   "green": 0,
+   "amber": 2,
+   "red": 0,
+   "trend": [
+    0.9774,
+    0.9747,
+    0.9761,
+    0.9784,
+    0.9748,
+    0.9781
+   ],
+   "adoption": {
+    "stage": "Managed",
+    "register_complete": true,
+    "rule_coverage": 1.0,
+    "issues_last_4_weeks": 0,
+    "sla_ack_rate": null,
+    "issue_sla_days": 5
+   },
+   "red_cdes": [],
+   "nudge": false,
+   "nudge_reasons": []
+  }
+ ],
+ "latest_cdes": [
+  {
+   "cde": "CDE-01",
+   "name": "Property country",
+   "domain": "Listings",
+   "criticality": "critical",
+   "definition": "ISO 3166-1 alpha-2 code of the country where the property is located; drives tax, legal and search.",
+   "classification": "internal",
+   "rules": [
+    "R01"
+   ],
+   "dimension": "validity",
+   "pass_rate": 0.998,
+   "target": 0.99,
+   "status": "green",
+   "failed_records": 1,
+   "records": 500,
+   "sample_failed_ids": [
+    "P00265"
+   ]
+  },
+  {
+   "cde": "CDE-02",
+   "name": "Property city",
+   "domain": "Listings",
+   "criticality": "high",
+   "definition": "City shown to guests in search and on the confirmation.",
+   "classification": "internal",
+   "rules": [
+    "R02"
+   ],
+   "dimension": "completeness",
+   "pass_rate": 0.99,
+   "target": 0.97,
+   "status": "green",
+   "failed_records": 5,
+   "records": 500,
+   "sample_failed_ids": [
+    "P00160",
+    "P00165",
+    "P00412",
+    "P00419",
+    "P00441"
+   ]
+  },
+  {
+   "cde": "CDE-03",
+   "name": "Nightly price",
+   "domain": "Listings",
+   "criticality": "critical",
+   "definition": "Base price per night in EUR before taxes and discounts.",
+   "classification": "internal",
+   "rules": [
+    "R03"
+   ],
+   "dimension": "validity",
+   "pass_rate": 0.998,
+   "target": 0.99,
+   "status": "green",
+   "failed_records": 1,
+   "records": 500,
+   "sample_failed_ids": [
+    "P00363"
+   ]
+  },
+  {
+   "cde": "CDE-04",
+   "name": "Listing verification date",
+   "domain": "Listings",
+   "criticality": "medium",
+   "definition": "Date the listing details were last confirmed by the host; older than 180 days counts as stale.",
+   "classification": "internal",
+   "rules": [
+    "R04"
+   ],
+   "dimension": "timeliness",
+   "pass_rate": 0.95,
+   "target": 0.95,
+   "status": "green",
+   "failed_records": 25,
+   "records": 500,
+   "sample_failed_ids": [
+    "P00018",
+    "P00028",
+    "P00040",
+    "P00048",
+    "P00056"
+   ]
+  },
+  {
+   "cde": "CDE-05",
+   "name": "Booking identifier",
+   "domain": "Bookings",
+   "criticality": "critical",
+   "definition": "Unique key of a booking across all channels.",
+   "classification": "internal",
+   "rules": [
+    "R05"
+   ],
+   "dimension": "uniqueness",
+   "pass_rate": 0.981,
+   "target": 0.99,
+   "status": "amber",
+   "failed_records": 29,
+   "records": 1529,
+   "sample_failed_ids": [
+    "B0007508",
+    "B0007584",
+    "B0007651",
+    "B0007659",
+    "B0007940"
+   ]
+  },
+  {
+   "cde": "CDE-06",
+   "name": "Booked property",
+   "domain": "Bookings",
+   "criticality": "critical",
+   "definition": "The property the booking is for; must exist in the listings register.",
+   "classification": "internal",
+   "rules": [
+    "R06"
+   ],
+   "dimension": "consistency",
+   "pass_rate": 0.9869,
+   "target": 0.99,
+   "status": "amber",
+   "failed_records": 20,
+   "records": 1529,
+   "sample_failed_ids": [
+    "B0007512",
+    "B0007513",
+    "B0007523",
+    "B0007729",
+    "B0007798"
+   ]
+  },
+  {
+   "cde": "CDE-07",
+   "name": "Stay dates",
+   "domain": "Bookings",
+   "criticality": "critical",
+   "definition": "Check-in and check-out dates; check-out must be after check-in.",
+   "classification": "internal",
+   "rules": [
+    "R07"
+   ],
+   "dimension": "consistency",
+   "pass_rate": 0.9725,
+   "target": 0.99,
+   "status": "red",
+   "failed_records": 42,
+   "records": 1529,
+   "sample_failed_ids": [
+    "B0007508",
+    "B0007540",
+    "B0007542",
+    "B0007558",
+    "B0007560"
+   ]
+  },
+  {
+   "cde": "CDE-08",
+   "name": "Booking currency",
+   "domain": "Bookings",
+   "criticality": "high",
+   "definition": "ISO 4217 currency of the amount charged; supported: EUR, GBP, USD, CHF.",
+   "classification": "internal",
+   "rules": [
+    "R08"
+   ],
+   "dimension": "validity",
+   "pass_rate": 0.9941,
+   "target": 0.97,
+   "status": "green",
+   "failed_records": 9,
+   "records": 1529,
+   "sample_failed_ids": [
+    "B0007798",
+    "B0008002",
+    "B0008142",
+    "B0008204",
+    "B0008240"
+   ]
+  },
+  {
+   "cde": "CDE-09",
+   "name": "Guest identifier",
+   "domain": "Guests",
+   "criticality": "critical",
+   "definition": "Pseudonymous key of the guest; never the guest's name or email.",
+   "classification": "restricted-personal",
+   "rules": [
+    "R09"
+   ],
+   "dimension": "completeness",
+   "pass_rate": 0.9882,
+   "target": 0.99,
+   "status": "amber",
+   "failed_records": 18,
+   "records": 1529,
+   "sample_failed_ids": [
+    "B0007551",
+    "B0007568",
+    "B0007662",
+    "B0007710",
+    "B0007763"
+   ]
+  },
+  {
+   "cde": "CDE-10",
+   "name": "Guest contact email",
+   "domain": "Guests",
+   "criticality": "high",
+   "definition": "Address used for booking confirmations; values are never copied into reports.",
+   "classification": "restricted-personal",
+   "rules": [
+    "R10"
+   ],
+   "dimension": "validity",
+   "pass_rate": 0.968,
+   "target": 0.97,
+   "status": "amber",
+   "failed_records": 49,
+   "records": 1529,
+   "sample_failed_ids": [
+    "B0007544",
+    "B0007564",
+    "B0007584",
+    "B0007602",
+    "B0007678"
+   ]
+  }
+ ],
+ "issues": [
+  {
+   "issue": "ISS-2026-W40-CDE-01",
+   "week": "2026-W40",
+   "cde": "CDE-01",
+   "domain": "Listings",
+   "failed_records": 16,
+   "ack_days": 3,
+   "within_sla": true
+  },
+  {
+   "issue": "ISS-2026-W40-CDE-04",
+   "week": "2026-W40",
+   "cde": "CDE-04",
+   "domain": "Listings",
+   "failed_records": 56,
+   "ack_days": 3,
+   "within_sla": true
+  },
+  {
+   "issue": "ISS-2026-W41-CDE-04",
+   "week": "2026-W41",
+   "cde": "CDE-04",
+   "domain": "Listings",
+   "failed_records": 42,
+   "ack_days": 3,
+   "within_sla": true
+  },
+  {
+   "issue": "ISS-2026-W42-CDE-04",
+   "week": "2026-W42",
+   "cde": "CDE-04",
+   "domain": "Listings",
+   "failed_records": 49,
+   "ack_days": 2,
+   "within_sla": true
+  },
+  {
+   "issue": "ISS-2026-W43-CDE-04",
+   "week": "2026-W43",
+   "cde": "CDE-04",
+   "domain": "Listings",
+   "failed_records": 60,
+   "ack_days": 3,
+   "within_sla": true
+  },
+  {
+   "issue": "ISS-2026-W44-CDE-07",
+   "week": "2026-W44",
+   "cde": "CDE-07",
+   "domain": "Bookings",
+   "failed_records": 39,
+   "ack_days": 9,
+   "within_sla": false
+  },
+  {
+   "issue": "ISS-2026-W45-CDE-07",
+   "week": "2026-W45",
+   "cde": "CDE-07",
+   "domain": "Bookings",
+   "failed_records": 42,
+   "ack_days": 7,
+   "within_sla": false
+  }
+ ],
+ "history": {
+  "2026-W40": {
+   "Listings": {
+    "score": 0.955,
+    "green": 2,
+    "amber": 0,
+    "red": 2
+   },
+   "Bookings": {
+    "score": 0.9969,
+    "green": 4,
+    "amber": 0,
+    "red": 0
+   },
+   "Guests": {
+    "score": 0.9774,
+    "green": 0,
+    "amber": 2,
+    "red": 0
+   }
+  },
+  "2026-W41": {
+   "Listings": {
+    "score": 0.9665,
+    "green": 2,
+    "amber": 1,
+    "red": 1
+   },
+   "Bookings": {
+    "score": 0.9975,
+    "green": 4,
+    "amber": 0,
+    "red": 0
+   },
+   "Guests": {
+    "score": 0.9747,
+    "green": 0,
+    "amber": 2,
+    "red": 0
+   }
+  },
+  "2026-W42": {
+   "Listings": {
+    "score": 0.9645,
+    "green": 2,
+    "amber": 1,
+    "red": 1
+   },
+   "Bookings": {
+    "score": 0.9945,
+    "green": 4,
+    "amber": 0,
+    "red": 0
+   },
+   "Guests": {
+    "score": 0.9761,
+    "green": 1,
+    "amber": 1,
+    "red": 0
+   }
+  },
+  "2026-W43": {
+   "Listings": {
+    "score": 0.9665,
+    "green": 3,
+    "amber": 0,
+    "red": 1
+   },
+   "Bookings": {
+    "score": 0.9971,
+    "green": 4,
+    "amber": 0,
+    "red": 0
+   },
+   "Guests": {
+    "score": 0.9784,
+    "green": 1,
+    "amber": 1,
+    "red": 0
+   }
+  },
+  "2026-W44": {
+   "Listings": {
+    "score": 0.983,
+    "green": 3,
+    "amber": 1,
+    "red": 0
+   },
+   "Bookings": {
+    "score": 0.9841,
+    "green": 1,
+    "amber": 2,
+    "red": 1
+   },
+   "Guests": {
+    "score": 0.9748,
+    "green": 0,
+    "amber": 2,
+    "red": 0
+   }
+  },
+  "2026-W45": {
+   "Listings": {
+    "score": 0.984,
+    "green": 4,
+    "amber": 0,
+    "red": 0
+   },
+   "Bookings": {
+    "score": 0.9836,
+    "green": 1,
+    "amber": 2,
+    "red": 1
+   },
+   "Guests": {
+    "score": 0.9781,
+    "green": 0,
+    "amber": 2,
+    "red": 0
+   }
+  }
+ },
+ "policy": {
+  "targets_by_criticality": {
+   "critical": 0.99,
+   "high": 0.97,
+   "medium": 0.95
+  },
+  "amber_margin": 0.01,
+  "cde_status_rule": "a CDE takes the pass rate of its weakest rule",
+  "stages": "Aware -> Defined (owner, steward, definitions) -> Measured (every CDE has a rule) -> Managed (>= 80% of issues acknowledged within SLA)"
+ },
+ "approval": {
+  "status": "draft notes need data-steward approval before they are sent",
+  "rule": "dgkit and the owner-nudge agent never contact anyone; a steward reviews and sends."
+ }
+}

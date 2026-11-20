@@ -1,0 +1,5 @@
+# SAMPLE DATA - invented to show the log format. Not from any real deployment.
+week,scorecards_published,notes_drafted,notes_sent_by_stewards,check_note_failures,steward_edits_per_note,issues_acknowledged_in_sla,owners_at_managed_stage,notes
+2026-W46,1,2,2,0,1.5,0.50,1,first live week
+2026-W47,1,2,1,0,0.5,0.67,1,one note held back by the steward
+2026-W48,1,1,1,1,1.0,0.80,2,a note used a rounded score not in facts.json; added as eval case

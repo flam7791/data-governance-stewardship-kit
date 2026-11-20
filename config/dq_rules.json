@@ -1,0 +1,15 @@
+{
+  "_about": "Data-quality rules as code. dimension follows DAMA-DMBOK (completeness, validity, uniqueness, consistency, timeliness). Each rule returns pass/fail per row; the pass rate is compared with the CDE's target.",
+  "rules": [
+    {"id": "R01", "cde": "CDE-01", "dataset": "properties", "dimension": "validity", "type": "in_set", "field": "country", "values": ["AT","BE","CH","DE","DK","ES","FR","GB","GR","IE","IT","NL","PL","PT","SE"]},
+    {"id": "R02", "cde": "CDE-02", "dataset": "properties", "dimension": "completeness", "type": "not_null", "field": "city"},
+    {"id": "R03", "cde": "CDE-03", "dataset": "properties", "dimension": "validity", "type": "range", "field": "nightly_price_eur", "min": 10, "max": 5000},
+    {"id": "R04", "cde": "CDE-04", "dataset": "properties", "dimension": "timeliness", "type": "freshness", "field": "last_verified_at", "max_age_days": 180},
+    {"id": "R05", "cde": "CDE-05", "dataset": "bookings", "dimension": "uniqueness", "type": "unique", "field": "booking_id"},
+    {"id": "R06", "cde": "CDE-06", "dataset": "bookings", "dimension": "consistency", "type": "foreign_key", "field": "property_id", "ref_dataset": "properties", "ref_field": "property_id"},
+    {"id": "R07", "cde": "CDE-07", "dataset": "bookings", "dimension": "consistency", "type": "date_order", "field": "checkin", "after_field": "checkout"},
+    {"id": "R08", "cde": "CDE-08", "dataset": "bookings", "dimension": "validity", "type": "in_set", "field": "currency", "values": ["EUR","GBP","USD","CHF"]},
+    {"id": "R09", "cde": "CDE-09", "dataset": "bookings", "dimension": "completeness", "type": "not_null", "field": "guest_id"},
+    {"id": "R10", "cde": "CDE-10", "dataset": "bookings", "dimension": "validity", "type": "regex", "field": "guest_email", "pattern": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"}
+  ]
+}
